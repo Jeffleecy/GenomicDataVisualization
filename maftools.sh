@@ -1,11 +1,13 @@
 #!/usr/bin/sh
 #SBATCH -A MST109178        # Account name/project number
-#SBATCH -J hg19_AN_MAF         # Job name
-#SBATCH -p ngs48G           # Partition Name 等同PBS裡面的 -q Queue name
-#SBATCH -c 14               # 使用的core數 請參考Queue資源設定 
-#SBATCH --mem=46G           # 使用的記憶體量 請參考Queue資源設定
+#SBATCH -J SAMPLE_NAME         # Job name
+#SBATCH -p ngs48G           # Partition Name 
+#SBATCH -c 14               # Core numbers
+#SBATCH --mem=46g           # Memory size
 #SBATCH -o out.log          # Path to the standard output file 
 #SBATCH -e err.log          # Path to the standard error ouput file
+#SBATCH --mail-user=@gmail.com    # email
+#SBATCH --mail-type=FAIL              # When to send an email = NONE, BEGIN, END, FAIL, REQUEUE, or ALL
 
 
 input_vcf='260_BigPanel.vcf'
