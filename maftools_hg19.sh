@@ -31,16 +31,3 @@ perl ${table_annovar} ${input_vcf} ${humandb} -buildver hg19 -out ${para} -remov
 module add pkg/Anaconda3
 
 python annovar_to_maftools_input.py -i ${para}.hg19_multianno.txt -o ${para}.hg19.maftools.txt
-
-#put the output to R maftools package extdata folder
-
-
-#R
-#library(maftools)
-#var.maf <- annovarToMaf(annovar='${para}.hg19.maftools.txt', refBuild='hg19', tsbCol='Sample', table='refGene')
-
-#then this var.maf can use as maf files in maftools
-
-#laml <- read.maf(maf=var.maf)
-
-#plotmafSummary(maf=laml,rmOutlier=TRUE, addStat='median', dashboard=TRUE) 
